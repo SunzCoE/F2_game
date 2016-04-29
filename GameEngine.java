@@ -83,10 +83,6 @@ public class GameEngine implements KeyListener, GameReporter{
 		gp.updateGameUI(this);
 	}
 
-	public void die(){
-		timer.stop();
-	}
-	
 	public void controlVehicle(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_LEFT:
