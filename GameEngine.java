@@ -13,7 +13,9 @@ import javax.swing.Timer;
 
 public class GameEngine implements KeyListener, GameReporter{
 	GamePanel gp;
-		
+	
+	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+	private SpaceShip v;	
 	private Timer timer;
 	private double difficulty = 0.1;
 	private long score = 0;

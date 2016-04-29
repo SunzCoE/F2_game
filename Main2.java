@@ -14,5 +14,14 @@ public class Main2 {
 		JPanel bg = new JPanel();
 			bg.setBackground(Color.LIGHT_GRAY);
 				frame.add(bg);
+
+		SpaceShip v = new SpaceShip(180, 550, 20, 20);
+		GamePanel gp = new GamePanel();
+		GameEngine engine = new GameEngine(gp, v);
+		frame.addKeyListener(engine);
+		frame.getContentPane().add(gp, BorderLayout.CENTER);
+		frame.setVisible(true);
+		
+		engine.start();		
 		}
 }
