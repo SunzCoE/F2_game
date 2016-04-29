@@ -65,10 +65,11 @@ public class GameEngine implements KeyListener, GameReporter{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sprites.remove(e);
-				score += 1;
+				score += 10;
 			}
 		}
 
+		gp.updateGameUI(this);
 
 		Rectangle2D.Double vr = v.getRectangle();
 		Rectangle2D.Double er;
@@ -80,16 +81,23 @@ public class GameEngine implements KeyListener, GameReporter{
 			}
 		}	
 
-		gp.updateGameUI(this);
+	}	
+	
+	public void die(){
+		timer.stop();
+	
 	}
 
-	public void controlVehicle(KeyEvent e) {
+	void controlVehicle(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_LEFT:
 			v.move(-1);
 			break;
 		case KeyEvent.VK_RIGHT:
 			v.move(1);
+			break;
+		case KeyEvent.VK_D:
+			difficulty += 0.1;
 			break;
 		}
 	}
